@@ -1,0 +1,162 @@
+
+.poppins {
+    font-family: "Poppins";
+    font-optical-sizing: auto;
+}
+
+:root {
+    box-sizing: border-box;
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+
+    font-family: poppins, serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--very-light-gray);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 54em;
+    width: calc(100% - 2rem);
+    margin: 1.5rem 1rem;
+    /* margin-top: 1.5rem; */
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 24rem;
+    padding: 1rem 2rem 3rem 2rem;
+}
+header > * {
+    text-align: center;
+}
+header > * + * {
+    margin-bottom: 0.5rem;
+}
+h1 {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--grayish-blue);
+}
+h2 {
+    font-size: 18px;
+    color: var(--very-dark-blue);
+}
+.narrative {
+    font-size: 12px;
+    color: var(--grayish-blue);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 1rem;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    min-height: 12rem;
+    position: relative;
+}
+.card::after {
+    content: "";
+    display:inline-block;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    background-size: 48px 48px;
+    bottom: 16px;
+    right: 16px;
+}
+.card.supervisor {
+    border-top: solid 2pt var(--cyan);
+}
+.card.card.team-builder {
+    border-top: solid 2pt var(--red);
+}
+.card.card.karma {
+    border-top: solid 2pt var(--orange);
+}
+.card.card.calculator {
+    border-top: solid 2pt var(--blue);
+}
+.card.supervisor::after {
+    background-image: url('./images/icon-supervisor.svg');
+    background-repeat: no-repeat;
+}
+.card.team-builder::after {
+    background-image: url('./images/icon-team-builder.svg');
+    background-repeat: no-repeat;
+}
+.card.karma::after {
+    background-image: url('./images/icon-karma.svg');
+    background-repeat: no-repeat;
+}
+.card.calculator::after {
+    background-image: url('./images/icon-calculator.svg');
+    background-repeat: no-repeat;
+}
+.card-title {
+    font-size: 16;
+    font-weight: bold;
+    color:var(--very-dark-blue);
+} 
+.card-caption {
+    font-size: 12px;
+    color: var(--grayish-blue);
+    padding-right: 3rem;
+}
+footer {
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        justify-content: center;
+    }
+    header {
+        padding: 1rem 0rem 3rem 0rem;
+    }
+    .container {
+        flex-direction: row;
+        align-items: normal;
+    }
+    .container > * {
+        flex: 1 1 33%;
+    }
+    .column {
+        justify-content: center;
+    }
+}
