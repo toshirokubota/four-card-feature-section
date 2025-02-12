@@ -90,7 +90,7 @@ h2 {
     background-color: white;
     padding: 1rem;
     border-radius: 3pt;
-    min-height: 14rem;
+    /* min-height: 14rem; */
     position: relative;
     box-shadow: 0pt 3pt 8pt rgba(167, 167, 250, 0.5);
     width: 100%;
@@ -99,12 +99,14 @@ h2 {
 .card::after {
     content: "";
     display:inline-block;
-    width: 64px;
-    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    width: 25%;
+    aspect-ratio: 1/1;
     position: absolute;
-    background-size: 48px 48px;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    background-size: 100% 100%;
+    bottom: 3%;
+    right: 3%;
 }
 .card.supervisor {
     border-top: solid 3pt var(--cyan);
@@ -135,12 +137,16 @@ h2 {
     background-repeat: no-repeat;
 }
 .card-title {
+    position:relative;
+    z-index: 1;
     font-size: 1.2rem;
     font-weight: 600;
     color:var(--very-dark-blue);
     padding-bottom: 0.5rem;
 } 
 .card-caption {
+    position:relative;
+    z-index: 1;
     font-size: 1rem;
     color: var(--grayish-blue);
 }
@@ -148,7 +154,7 @@ footer {
     margin-top: 1rem;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
     body {
         justify-content: center;
     }
@@ -179,9 +185,9 @@ footer {
         padding: 1.25rem;
         aspect-ratio: 4/3;
     }
-    .card::after {
-        background-size: 64px 64px;
-        bottom: 2rem;
-        right: 2rem;
-    }
+    /* .card::after {
+        background-size: 5vw 5vw;
+        bottom: 1vw;
+        right: 1vw;
+    } */
 }
