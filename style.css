@@ -40,10 +40,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 67rem;
+    /* max-width: 25rem; */
     width: calc(100% - 2rem);
     margin: 1.5rem 1rem;
-    /* margin-top: 1.5rem; */
+    font-size: clamp(1rem, 0.8rem + 1vw, 3rem);
 }
 header {
     display: flex;
@@ -58,17 +58,18 @@ header > * + * {
     margin-bottom: 0.5rem;
 }
 h1 {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 0.8rem + 3vw, 3rem);
     font-weight: 400;
     color: var(--grayish-blue);
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 0.8rem + 3vw, 3rem);
     font-weight: 600;
     color: var(--very-dark-blue);
 }
 .narrative {
     color: var(--grayish-blue);
+    text-wrap: pretty;
 }
 .container {
     display: flex;
@@ -101,12 +102,12 @@ h2 {
     display:inline-block;
     min-width: 64px;
     min-height: 64px;
-    width: 25%;
+    width: 20%;
     aspect-ratio: 1/1;
     position: absolute;
     background-size: 100% 100%;
-    bottom: 3%;
-    right: 3%;
+    bottom: 5%;
+    right: 5%;
 }
 .card.supervisor {
     border-top: solid 3pt var(--cyan);
@@ -139,7 +140,7 @@ h2 {
 .card-title {
     position:relative;
     z-index: 1;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.8rem + 2vw, 3rem);
     font-weight: 600;
     color:var(--very-dark-blue);
     padding-bottom: 0.5rem;
@@ -147,27 +148,31 @@ h2 {
 .card-caption {
     position:relative;
     z-index: 1;
-    font-size: 1rem;
+    /* font-size: clamp(1rem, 0.8rem + 1vw, 3rem);; */
     color: var(--grayish-blue);
+    text-wrap: pretty;
 }
 footer {
     margin-top: 1rem;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 850px) {
+    main {
+        max-width: 75rem;
+        font-size: clamp(1rem, 0.8rem + 0.5vw, 3rem);
+    }
     body {
         justify-content: center;
     }
     header {
-        padding: 1rem 0rem 3rem 0rem;
+        padding: 3rem 1rem;
         max-width: 48rem;
     }
     h1, h2 {
-        font-size: 2rem;
+        font-size: clamp(1rem, 0.8rem + 1vw, 3rem);
     }
     .narrative {
-        font-size: 1.2rem;
-        max-width: 36rem;
+        font-size: clamp(1rem, 0.8rem + 0.5vw, 3rem);;
     }
     .container {
         flex-direction: row;
@@ -183,11 +188,11 @@ footer {
     }
     .card {
         padding: 1.25rem;
-        aspect-ratio: 4/3;
     }
-    /* .card::after {
-        background-size: 5vw 5vw;
-        bottom: 1vw;
-        right: 1vw;
-    } */
+    .card-title {
+        font-size: clamp(1rem, 0.8rem + 0.5vw, 3rem);
+    }
+    .card-caption {
+        font-size: clamp(1rem, 0.8rem + 0.25vw, 3rem);
+    }
 }
